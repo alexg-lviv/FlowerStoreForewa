@@ -13,6 +13,16 @@ public class FlowerBucket {
         flowerPacks.add(flowerPack);
     }
 
+    public int count_flowers(FlowerType flower){
+        int res = 0;
+        for(int i=0; i<flowerPacks.size();i++){
+            if(flowerPacks.get(i).flower.getFlowerType() == flower){
+                res += flowerPacks.get(i).getAmount();
+            }
+        }
+        return res;
+    }
+
     public double getPrice(){
         double res = 0;
         for(int i=0; i<flowerPacks.size(); i++){
