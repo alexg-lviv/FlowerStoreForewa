@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter@Setter
 public class Sender implements User{
-    int id = 0;
+    private int id = 0;
 
     public Sender() {
         this.id = TotalCounter.counter();

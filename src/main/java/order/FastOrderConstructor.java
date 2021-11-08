@@ -9,19 +9,21 @@ import payment.Payment;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-enum FastOrderConstructor{
-    ROSE_BUCKET(FlowerType.ROSE),
-    TULIP_BUCKET(FlowerType.TULIP),
-    CHAMOMILE_BUCKET(FlowerType.CHAMOMILE);
+public enum FastOrderConstructor{
+    ROSE_BUCKET(FlowerType.ROSE, 5),
+    TULIP_BUCKET(FlowerType.TULIP, 15),
+    CHAMOMILE_BUCKET(FlowerType.CHAMOMILE, 10);
     private FlowerType type;
+    private int price;
 
-    FastOrderConstructor(FlowerType type) {this.type = type;}
+    FastOrderConstructor(FlowerType type, int price) {this.type = type; this.price = price;}
 
     private FlowerType getType(){return this.type;}
+    private int getPrice(){return price;}
 
-    public static Order createOrder(FastOrderConstructor bucket_type, int num_of_roses, int price){
+    public static Order createOrder(FastOrderConstructor bucket_type, int num_of_roses){
         Flower flower = new Flower(bucket_type.getType());
-        flower.setPrice(price);
+        flower.setPrice(bucket_type.getPrice());
         FlowerPack pack = new FlowerPack();
         pack.setFlower(flower);
         pack.setAmount(num_of_roses);

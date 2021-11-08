@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class FastOrderConstructorTest {
     @Test
     void createOrder() {
-        Order order = FastOrderConstructor.createOrder(FastOrderConstructor.ROSE_BUCKET, 5, 5);
+        Order order = FastOrderConstructor.createOrder(FastOrderConstructor.ROSE_BUCKET, 5);
         assertEquals(25, order.calculateTotalPrice());
     }
 }
